@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     "rest_framework.authtoken",
     "task",
     "djoser",
+    "corsheaders",
     "django_filters",
     "django.contrib.admin",
     "django.contrib.auth",
@@ -50,6 +51,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    "corsheaders.middleware.CorsMiddlewar",
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
@@ -147,3 +149,8 @@ REST_FRAMEWORK = {
     "PAGE_SIZE": 10,
     "DEFAULT_FILTER_BACKENDS": ["django_filters.rest_framework.DjangoFilterBackend"],
 }
+
+
+CORS_ORIGIN_WHITELIST = [
+    "http://localhost:5173",
+]
